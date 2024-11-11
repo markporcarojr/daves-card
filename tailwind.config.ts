@@ -1,6 +1,4 @@
-import type { Config } from "tailwindcss";
-
-export default {
+module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,7 +10,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      transform: {
+        "rotate-y-180": "rotateY(180deg)", // Custom rotation
+      },
     },
   },
   plugins: [],
-} satisfies Config;
+};

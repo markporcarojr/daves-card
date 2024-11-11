@@ -1,3 +1,4 @@
+/* Globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,4 +19,29 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  perspective: 150rem;
+  transform-style: preserve-3d; /* Ensures 3D transforms work */
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden; /* Hides the back face when flipped */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.card-front {
+  background: #1a1a1a;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background: #2c3e50;
+  transform: rotateY(180deg); /* Initially rotated 180deg */
 }

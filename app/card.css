@@ -1,0 +1,39 @@
+.card {
+  perspective: 150rem;
+}
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+.card-front::before,
+.card-back::before,
+.card-front::after,
+.card-back::after {
+  position: absolute;
+}
+.card-front::before,
+.card-back::before {
+  top: -40px;
+  right: -40px;
+  content: "";
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+.card-front::after,
+.card-back::after {
+  content: "+";
+  top: 0;
+  right: 10px;
+  font-size: 24px;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+.card:hover .card-front {
+  transform: rotateX(-180deg);
+}
+.card:hover .card-back {
+  transform: rotateX(0deg);
+}
