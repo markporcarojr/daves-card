@@ -1,4 +1,3 @@
-// components/BusinessCard.js
 import React from "react";
 import Image from "next/image";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
@@ -9,7 +8,7 @@ const BusinessCard = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-800">
       <div className="group h-96 w-80 [perspective:1000px]">
-        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] active:[transform:rotateY(180deg)]">
           {/* Front of the Card */}
           <div className="absolute inset-0">
             <Image
