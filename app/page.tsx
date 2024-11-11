@@ -31,7 +31,7 @@ const BusinessCard = () => {
                 molestiae commodi laudantium blanditiis perspiciatis aliquam
                 nemo ratione nam minus nisi.
               </p>
-              <div className="flex flex-row">
+              <div className="flex flex-row gap-5">
                 <Link
                   href={"https://www.instagram.com"}
                   className="mt-2 rounded-md bg-neutral-800 py-1 px-2 text-sm hover:bg-neutral-900"
