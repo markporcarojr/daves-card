@@ -39,7 +39,7 @@ export default function BusinessCard() {
   }, [flipped]);
 
   return (
-    <div className="flex justify-center items-center h-screen flex-col">
+    <div className="flex justify-center items-center h-screen flex-col px-4">
       <div
         ref={cardRef}
         className={`
@@ -86,53 +86,62 @@ export default function BusinessCard() {
 
           {/* Contact Info (Overlayed Above Image) */}
           <div className="absolute text-white font-semibold text-center px-5">
-            <h1 className="text-2xl font-bold">David Porcaro</h1>
-            <p className="text-lg">Bartender</p>
-            <p className="text-sm mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
-              molestiae commodi laudantium blanditiis.
+            <h1 className="text-3xl font-bold">David Porcaro</h1>
+            <p className="text-xl">Bartender</p>
+            <p className="mt-2">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusamus nisi, odit, suscipit ipsam facilis reprehenderit est
+              odio, incidunt ab tenetur ducimus vel repellat corrupti optio
+              voluptas sunt repellendus facere omnis? Delectus eum temporibus
+              voluptate tempora recusandae possimus nostrum culpa voluptates sit
+              eius cupiditate, fuga consectetur.
             </p>
-
-            {/* Social Links */}
-            <div className="flex flex-row gap-4 mt-3">
-              <Link
-                href="https://www.instagram.com"
-                className="rounded-md bg-neutral-800 p-2 text-lg hover:bg-neutral-900"
-              >
-                <BsInstagram />
-              </Link>
-              <Link
-                href="https://www.twitter.com"
-                className="rounded-md bg-neutral-800 p-2 text-lg hover:bg-neutral-900"
-              >
-                <BsTwitterX />
-              </Link>
-              <Link
-                href="https://www.linkedin.com"
-                className="rounded-md bg-neutral-800 p-2 text-lg hover:bg-neutral-900"
-              >
-                <FaLinkedin />
-              </Link>
-            </div>
           </div>
         </div>
       </div>
-      <div className="mt-5 relative">
-        {/* button border magic from tailwind css buttons  */}
-        {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-        {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-        {/* add handleCopy() for the copy the text */}
-        <div
-          className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}
-        >
-          {/* <img src="/confetti.gif" alt="confetti" /> */}
-          <Lottie
-            animationData={animationData}
-            loop={copied}
-            autoplay={copied}
-          />
+
+      {/* Bottom Section */}
+      <div className="mt-8 flex flex-col items-center space-y-6">
+        {/* Lottie Animation for Copy Success */}
+        {copied && (
+          <div className="absolute -top-10">
+            <Lottie
+              animationData={animationData}
+              loop={copied}
+              autoplay={copied}
+            />
+          </div>
+        )}
+
+        {/* Social Links */}
+        <div className="flex flex-row gap-6">
+          <Link
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-neutral-800 p-2 text-3xl transition-all duration-200 hover:bg-neutral-700"
+          >
+            <BsInstagram />
+          </Link>
+          <Link
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-neutral-800 p-2 text-3xl transition-all duration-200 hover:bg-neutral-700"
+          >
+            <BsTwitterX />
+          </Link>
+          <Link
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-neutral-800 p-2 text-3xl transition-all duration-200 hover:bg-neutral-700"
+          >
+            <FaLinkedin />
+          </Link>
         </div>
 
+        {/* Copy Email Button */}
         <MagicButton
           title={copied ? "Email is Copied!" : "Copy my email address"}
           icon={<IoCopyOutline />}
