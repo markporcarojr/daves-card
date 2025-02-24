@@ -19,7 +19,7 @@ export default function BusinessCard() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleCopy = () => {
-    const text = "davidporcaro@gmail.com";
+    const text = "mibeerrox@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => {
