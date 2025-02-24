@@ -19,12 +19,12 @@ export default function BusinessCard() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleCopy = () => {
-    const text = "markporcarojr@gmail.com";
+    const text = "davidporcaro@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
-    }, 3000);
+    }, 2000);
   };
 
   // Ensure GSAP runs only on the client
