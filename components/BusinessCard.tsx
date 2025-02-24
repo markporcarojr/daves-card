@@ -21,7 +21,7 @@ export default function BusinessCard() {
   const router = useRouter();
 
   const handleCopy = () => {
-    const text = "mibeerrox@gmail.com";
+    const text = "Studious.Alchemist13@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => {
