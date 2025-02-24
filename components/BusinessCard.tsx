@@ -39,7 +39,7 @@ export default function BusinessCard() {
   }, [flipped]);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900 flex-col">
+    <div className="flex justify-center items-center h-screen flex-col">
       <div
         ref={cardRef}
         className={`

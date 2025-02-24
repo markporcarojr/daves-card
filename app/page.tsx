@@ -8,8 +8,12 @@ const BusinessCard = dynamic(() => import("@/components/BusinessCard"), {
 const Home = () => {
   return (
     <>
-      <Hero />
-      <BusinessCard />
+      <div className="relative w-full h-screen flex items-center justify-center bg-black">
+        <Hero />
+        <div className="relative z-10">
+          <BusinessCard />
+        </div>
+      </div>
     </>
   );
 };
