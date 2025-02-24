@@ -8,7 +8,10 @@ import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import animationData from "@/data/confetti.json";
 import { IoCopyOutline } from "react-icons/io5";
+import { FaFileAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 import MagicButton from "@/components/ui/MagicButton";
+import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
 
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
@@ -17,6 +20,8 @@ export default function BusinessCard() {
   const [copied, setCopied] = useState(false);
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const hintRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const handleCopy = () => {
     const text = "mibeerrox@gmail.com";
@@ -25,6 +30,10 @@ export default function BusinessCard() {
     setTimeout(() => {
       setCopied(false);
     }, 2000);
+  };
+
+  const handleResume = () => {
+    router.push("/resume");
   };
 
   // Ensure GSAP runs only on the client
@@ -36,19 +45,38 @@ export default function BusinessCard() {
       duration: 0.9,
       ease: "power2.inOut",
     });
+
+    // Remove the "Tap to Flip" hint after first flip
+    if (flipped && hintRef.current) {
+      gsap.to(hintRef.current, {
+        opacity: 0,
+        y: -10,
+        duration: 0.5,
+        onComplete: () => {
+          hintRef.current!.style.display = "none";
+        },
+      });
+    }
   }, [flipped]);
 
   return (
     <div className="flex justify-center items-center h-screen flex-col px-4">
+      {/* 🔥 "Tap to Flip" Hint (Only Visible Before First Flip) */}
+      <motion.div
+        ref={hintRef}
+        className="absolute top-[10%] text-white text-lg font-semibold opacity-90 flex items-center gap-2 bg-black/50 px-4 py-2 rounded-md"
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: [0.8, 0.3, 0.8], y: [-5, 0, -5] }}
+        transition={{ repeat: Infinity, duration: 1.5 }}
+      >
+        👉 Tap to Flip
+      </motion.div>
+
       <div
         ref={cardRef}
-        className={`
-          relative cursor-pointer perspective
-          w-[95vw] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] 
-          h-[60vh] max-h-[380px] sm:max-h-[420px] md:max-h-[480px] 
-        `}
+        className="relative cursor-pointer perspective w-[95vw] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] h-[60vh] max-h-[380px] sm:max-h-[420px] md:max-h-[480px] shadow-xl"
         onClick={() => setFlipped(!flipped)}
-        style={{ transformStyle: "preserve-3d" }} // Required for 3D effect
+        style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Side - Normal Image */}
         <div
@@ -147,6 +175,13 @@ export default function BusinessCard() {
           icon={<IoCopyOutline />}
           position="left"
           handleClick={handleCopy}
+          otherClasses="!bg-[#161A31]"
+        />
+        <MagicButton
+          title={"View My Resume"}
+          icon={<FaFileAlt />}
+          position="left"
+          handleClick={handleResume}
           otherClasses="!bg-[#161A31]"
         />
       </div>
