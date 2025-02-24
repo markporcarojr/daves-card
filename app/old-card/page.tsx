@@ -1,5 +1,5 @@
 import React from "react";
-import OldBusinessCard from "../OldBusinessCard";
+import OldBusinessCard from "../../components/OldBusinessCard";
 
 const OldCardPage = () => {
   return (
