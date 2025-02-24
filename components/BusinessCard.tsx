@@ -3,9 +3,6 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-// import Link from "next/link";
-// import { BsInstagram, BsTwitterX } from "react-icons/bs";
-// import { FaLinkedin } from "react-icons/fa";
 import animationData from "@/data/confetti.json";
 import { IoCopyOutline } from "react-icons/io5";
 import { FaFileAlt } from "react-icons/fa";
@@ -139,34 +136,6 @@ export default function BusinessCard() {
             />
           </div>
         )}
-
-        {/* Social Links
-        <div className="flex flex-row gap-6">
-          <Link
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md bg-neutral-800 p-2 text-3xl transition-all duration-200 hover:bg-neutral-700"
-          >
-            <BsInstagram />
-          </Link>
-          <Link
-            href="https://www.twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md bg-neutral-800 p-2 text-3xl transition-all duration-200 hover:bg-neutral-700"
-          >
-            <BsTwitterX />
-          </Link>
-          <Link
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md bg-neutral-800 p-2 text-3xl transition-all duration-200 hover:bg-neutral-700"
-          >
-            <FaLinkedin />
-          </Link>
-        </div> */}
 
         {/* Copy Email Button */}
         <MagicButton
