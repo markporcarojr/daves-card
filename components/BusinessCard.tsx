@@ -3,9 +3,9 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
-import { BsInstagram, BsTwitterX } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+// import Link from "next/link";
+// import { BsInstagram, BsTwitterX } from "react-icons/bs";
+// import { FaLinkedin } from "react-icons/fa";
 import animationData from "@/data/confetti.json";
 import { IoCopyOutline } from "react-icons/io5";
 import { FaFileAlt } from "react-icons/fa";
