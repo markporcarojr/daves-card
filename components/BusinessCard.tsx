@@ -117,12 +117,11 @@ export default function BusinessCard() {
             <h1 className="text-3xl font-bold">David Porcaro</h1>
             <p className="text-xl">Bartender</p>
             <p className="mt-2">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus nisi, odit, suscipit ipsam facilis reprehenderit est
-              odio, incidunt ab tenetur ducimus vel repellat corrupti optio
-              voluptas sunt repellendus facere omnis? Delectus eum temporibus
-              voluptate tempora recusandae possimus nostrum culpa voluptates sit
-              eius cupiditate, fuga consectetur.
+              Craft cocktails are my fortè and whiskey is my specialty, but I
+              can spin the simplest of drinks into artful potions. I am a fast
+              and creative bartender looking for a clean and professional place
+              to satisfy guests. I would love a blended role encompassing any
+              service role, including bartending, serving, and prep shifts.
             </p>
           </div>
         </div>
@@ -141,7 +140,7 @@ export default function BusinessCard() {
           </div>
         )}
 
-        {/* Social Links */}
+        {/* Social Links
         <div className="flex flex-row gap-6">
           <Link
             href="https://www.instagram.com"
@@ -167,7 +166,7 @@ export default function BusinessCard() {
           >
             <FaLinkedin />
           </Link>
-        </div>
+        </div> */}
 
         {/* Copy Email Button */}
         <MagicButton
