@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function Resume() {
@@ -9,7 +8,7 @@ export default function Resume() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6 md:p-12">
       <div className="max-w-3xl mx-auto bg-gray-800 shadow-lg rounded-lg p-8">
-        {/* Header */}
+        {/* Header fixed */}
         <div className="text-center">
           <h1 className="text-4xl font-bold">David B. Porcaro</h1>
           <p className="text-lg text-gray-400">
