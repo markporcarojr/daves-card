@@ -11,7 +11,7 @@ import MagicButton from "@/components/ui/MagicButton";
 import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
 
 import dynamic from "next/dynamic";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 
 export default function BusinessCard() {
 
@@ -120,15 +120,7 @@ export default function BusinessCard() {
       {/* Bottom Section */}
       <div className="mt-8 flex flex-col items-center space-y-6">
         {/* Lottie Animation for Copy Success */}
-        {copied && (
-          <div className="absolute -top-10">
-            <Lottie
-              animationData={animationData}
-              loop={copied}
-              autoplay={copied}
-            />
-          </div>
-        )}
+
 
        
         <MagicButton
