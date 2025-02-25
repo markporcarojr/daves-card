@@ -3,14 +3,14 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import animationData from "@/data/confetti.json";
+
 
 import { FaFileAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import MagicButton from "@/components/ui/MagicButton";
 import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
 
-import dynamic from "next/dynamic";
+
 
 
 export default function BusinessCard() {
