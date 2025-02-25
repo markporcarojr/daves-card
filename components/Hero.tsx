@@ -1,7 +1,7 @@
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 
-const Hero = () => {
+const SpotlightDiv = () => {
   return (
     <div className="absolute inset-0 w-full h-screen overflow-hidden">
       {/* Multiple Spotlights Positioned Around the Business Card */}
@@ -29,4 +29,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default SpotlightDiv;

@@ -1,26 +1,18 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-
-
-import { FaFileAlt } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import MagicButton from "@/components/ui/MagicButton";
 import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
-
-
-
+import { useRouter } from "next/navigation";
+import { FaFileAlt } from "react-icons/fa";
 
 export default function BusinessCard() {
-
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-
-  
 
   const handleResume = () => {
     router.push("/resume");
@@ -119,10 +111,6 @@ export default function BusinessCard() {
 
       {/* Bottom Section */}
       <div className="mt-8 flex flex-col items-center space-y-6">
-        {/* Lottie Animation for Copy Success */}
-
-
-       
         <MagicButton
           title={"View My Resume"}
           icon={<FaFileAlt />}

@@ -6,9 +6,9 @@ export default function Resume() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 md:p-12">
-      <div className="max-w-3xl mx-auto bg-gray-800 shadow-lg rounded-lg p-8">
-        {/* Header fixed */}
+    <div className="min-h-screen bg-[url(/images/batthern.png)] text-white p-6 md:p-12">
+      <div className="max-w-3xl mx-auto bg-[#1a1a1a] bg-opacity-75 shadow-lg rounded-lg p-8 backdrop-filter backdrop-blur-sm">
+        {/* Header */}
         <div className="text-center">
           <h1 className="text-4xl font-bold">David B. Porcaro</h1>
           <p className="text-lg text-gray-400">
@@ -48,9 +48,9 @@ export default function Resume() {
           </p>
           <p className="mt-2 italic text-gray-400">
             - Combine all ingredients and shake or stir with fast pace and
-            intensity. <br />- Garnish with a dash of good humor and
-            personality. Smile. <br />- Heavily seasoned by 15 years of fine
-            dining and culinary expertise.
+            intensity. <br />
+            - Garnish with a dash of good humor and personality. Smile. <br />-
+            Heavily seasoned by 15 years of fine dining and culinary expertise.
           </p>
         </div>
 
@@ -164,7 +164,7 @@ export default function Resume() {
             className="bg-blue-500 px-6 py-2 rounded-md text-white hover:bg-blue-600 transition-all"
             onClick={() => router.push("/")}
           >
-            Back to Home
+            Back
           </button>
         </div>
       </div>
