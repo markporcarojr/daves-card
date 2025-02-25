@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import animationData from "@/data/confetti.json";
-import { IoCopyOutline } from "react-icons/io5";
+
 import { FaFileAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import MagicButton from "@/components/ui/MagicButton";
@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function BusinessCard() {
-  const [copied, setCopied] = useState(false);
+
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
