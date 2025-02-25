@@ -137,14 +137,7 @@ export default function BusinessCard() {
           </div>
         )}
 
-        {/* Copy Email Button */}
-        <MagicButton
-          title={copied ? "Email is Copied!" : "Copy my email address"}
-          icon={<IoCopyOutline />}
-          position="left"
-          handleClick={handleCopy}
-          otherClasses="!bg-[#161A31]"
-        />
+       
         <MagicButton
           title={"View My Resume"}
           icon={<FaFileAlt />}
