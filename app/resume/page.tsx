@@ -1,12 +1,24 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Resume() {
   const router = useRouter();
+  const [animateFadeIn, setAnimateFadeIn] = useState(false);
+
+  useEffect(() => {
+    setAnimateFadeIn(true); // Trigger fade-in animation on component mount
+  }, []);
 
   return (
-    <div className="min-h-screen bg-[url(/images/skulls.png)] text-white p-6 md:p-12">
+    <div
+      className={`min-h-screen bg-[url(/images/skulls.png)] text-white p-6 md:p-12 fade-in-page ${
+        animateFadeIn ? "animate-fade-in" : ""
+      }`}
+    >
+      {" "}
+      {/* Apply fade-in classes */}
       <div className="max-w-3xl mx-auto bg-[#1a1a1a] bg-opacity-75 shadow-lg rounded-lg p-8 backdrop-filter backdrop-blur-sm">
         {/* Header */}
         <div className="text-center">

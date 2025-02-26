@@ -54,3 +54,16 @@ body {
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
+
+/* globals.css (or your global CSS file) */
+
+/* Initial state - Page is transparent */
+.fade-in-page {
+  opacity: 0; /* Start completely transparent */
+}
+
+/* Class to trigger fade-in animation */
+.fade-in-page.animate-fade-in {
+  opacity: 1; /* Fade to fully opaque */
+  transition: opacity 1s ease-in-out; /* Define the transition */
+}
