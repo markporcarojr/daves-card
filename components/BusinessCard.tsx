@@ -26,7 +26,7 @@ export default function BusinessCard() {
     // start the text generation effect after 3 seconds
     const timeout = setTimeout(() => {
       setGenerateDelay(true);
-    }, 3500);
+    }, 4000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -96,7 +96,7 @@ export default function BusinessCard() {
           <div className="absolute text-white font-semibold text-center px-5">
             <h1 className="text-3xl font-bold">David Porcaro</h1>
             <p className="text-2xl">Bartender</p>
-            <div className="mt-2 text-white text-xl min-h-16">
+            <div className="mt-2 text-white text-xl min-h-[8rem]">
               {generateDelay && (
                 <TextGenerateEffect words={words} duration={1} />
               )}
