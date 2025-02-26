@@ -96,11 +96,11 @@ export default function BusinessCard() {
           <div className="absolute text-white font-semibold text-center px-5">
             <h1 className="text-3xl font-bold">David Porcaro</h1>
             <p className="text-xl">Bartender</p>
-            <p className="mt-2 text-white">
+            <div className="mt-2 text-white">
               {generateDelay && (
                 <TextGenerateEffect words={words} duration={1} />
               )}
-            </p>
+            </div>
           </div>
         </div>
       </div>
