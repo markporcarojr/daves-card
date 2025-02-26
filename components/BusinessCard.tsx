@@ -7,19 +7,31 @@ import MagicButton from "@/components/ui/MagicButton";
 // import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
 import { useRouter } from "next/navigation";
 import { FaFileAlt } from "react-icons/fa";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 
 export default function BusinessCard() {
+  // const hintRef = useRef<HTMLDivElement>(null);
+  const [generateDelay, setGenerateDelay] = useState(false);
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const hintRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const words =
+    "Craft cocktails are my fortè and whiskey is my specialty, but I can spin the simplest of drinks into artful potions. I am a fast and creative bartender looking for a clean and professional place to satisfy guests. I would love a blended role encompassing any service role, including bartending, serving, and prep shifts.";
 
   const handleResume = () => {
     router.push("/resume");
   };
 
   useEffect(() => {
-    // rotate card after 3 seconds
+    // start the text generation effect after 3 seconds
+    const timeout = setTimeout(() => {
+      setGenerateDelay(true);
+    }, 3500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
     const timeout = setTimeout(() => {
       setFlipped(true);
     }, 3000);
@@ -36,18 +48,6 @@ export default function BusinessCard() {
       duration: 0.9,
       ease: "power2.inOut",
     });
-
-    // Remove the "Tap to Flip" hint after first flip
-    if (flipped && hintRef.current) {
-      gsap.to(hintRef.current, {
-        opacity: 0,
-        y: -10,
-        duration: 0.5,
-        onComplete: () => {
-          hintRef.current!.style.display = "none";
-        },
-      });
-    }
   }, [flipped]);
 
   return (
@@ -96,12 +96,10 @@ export default function BusinessCard() {
           <div className="absolute text-white font-semibold text-center px-5">
             <h1 className="text-3xl font-bold">David Porcaro</h1>
             <p className="text-xl">Bartender</p>
-            <p className="mt-2">
-              Craft cocktails are my fortè and whiskey is my specialty, but I
-              can spin the simplest of drinks into artful potions. I am a fast
-              and creative bartender looking for a clean and professional place
-              to satisfy guests. I would love a blended role encompassing any
-              service role, including bartending, serving, and prep shifts.
+            <p className="mt-2 text-white">
+              {generateDelay && (
+                <TextGenerateEffect words={words} duration={1} />
+              )}
             </p>
           </div>
         </div>
