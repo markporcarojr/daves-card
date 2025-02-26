@@ -52,17 +52,6 @@ export default function BusinessCard() {
 
   return (
     <div className="flex justify-center items-center h-screen flex-col px-4">
-      {/* 🔥 "Tap to Flip" Hint (Only Visible Before First Flip)
-      <motion.div
-        ref={hintRef}
-        className="absolute top-[10%] text-white text-lg font-semibold opacity-90 flex items-center gap-2 bg-black/50 px-4 py-2 rounded-md"
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: [0.8, 0.3, 0.8], y: [-5, 0, -5] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        👉 Tap to Flip
-      </motion.div> */}
-
       <div
         ref={cardRef}
         className="relative cursor-pointer perspective w-[95vw] max-w-[500px] sm:max-w-[600px] md:max-w-[700px] h-[60vh] max-h-[380px] sm:max-h-[420px] md:max-h-[480px] shadow-xl"
