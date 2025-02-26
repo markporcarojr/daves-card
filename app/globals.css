@@ -64,6 +64,6 @@ body {
 
 /* Class to trigger fade-in animation */
 .fade-in-page.animate-fade-in {
-  opacity: 1; /* Fade to fully opaque */
+  opacity: 0.75;
   transition: opacity 1s ease-in-out; /* Define the transition */
 }
