@@ -93,10 +93,13 @@ export default function BusinessCard() {
           </div>
 
           {/* Contact Info (Overlayed Above Image) */}
-          <div className="absolute text-white font-semibold text-center px-5">
-            <h1 className="text-3xl font-bold">David Porcaro</h1>
+          {/* Contact Info (Overlayed Above Image) */}
+          <div className="absolute top-0 left-0 right-0 text-white font-semibold text-center px-5">
+            <h1 className="text-3xl font-bold mt-2">David Porcaro</h1>
             <p className="text-2xl">Bartender</p>
-            <div className="mt-2 text-white text-xl min-h-[8rem]">
+            {/* Reserve the space for generated text */}
+            <div className="mt-2 text-white text-xl min-h-[8rem] relative">
+              {/* Hidden clone to reserve space */}
               {generateDelay && (
                 <TextGenerateEffect words={words} duration={1} />
               )}
