@@ -4,7 +4,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import MagicButton from "@/components/ui/MagicButton";
-import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
+// import { motion } from "framer-motion"; // ✅ Only keeping it for the hint
 import { useRouter } from "next/navigation";
 import { FaFileAlt } from "react-icons/fa";
 
@@ -17,6 +17,15 @@ export default function BusinessCard() {
   const handleResume = () => {
     router.push("/resume");
   };
+
+  useEffect(() => {
+    // rotate card after 3 seconds
+    const timeout = setTimeout(() => {
+      setFlipped(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   // Ensure GSAP runs only on the client
   useEffect(() => {
@@ -43,7 +52,7 @@ export default function BusinessCard() {
 
   return (
     <div className="flex justify-center items-center h-screen flex-col px-4">
-      {/* 🔥 "Tap to Flip" Hint (Only Visible Before First Flip) */}
+      {/* 🔥 "Tap to Flip" Hint (Only Visible Before First Flip)
       <motion.div
         ref={hintRef}
         className="absolute top-[10%] text-white text-lg font-semibold opacity-90 flex items-center gap-2 bg-black/50 px-4 py-2 rounded-md"
@@ -52,7 +61,7 @@ export default function BusinessCard() {
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
         👉 Tap to Flip
-      </motion.div>
+      </motion.div> */}
 
       <div
         ref={cardRef}
