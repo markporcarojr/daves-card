@@ -65,7 +65,7 @@ export default function BusinessCard() {
         >
           <Image
             className="h-full w-full rounded-xl shadow-xl shadow-black/40"
-            src="/images/dave.jpg"
+            src="/images/daves-beer.jpg"
             alt="Business Image"
             fill
             priority
