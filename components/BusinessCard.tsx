@@ -8,6 +8,8 @@ import MagicButton from "@/components/ui/MagicButton";
 import { useRouter } from "next/navigation";
 import { FaFileAlt } from "react-icons/fa";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import { FaInstagram } from "react-icons/fa";
+import { SiInstagram } from "react-icons/si";
 
 export default function BusinessCard() {
   // const hintRef = useRef<HTMLDivElement>(null);
@@ -101,7 +103,7 @@ export default function BusinessCard() {
             <div className="mt-2 text-white text-xl min-h-[8rem] relative">
               {/* Hidden clone to reserve space */}
               {generateDelay && (
-                <TextGenerateEffect words={words} duration={1} />
+                <TextGenerateEffect words={words} duration={0.7} />
               )}
             </div>
           </div>
@@ -109,14 +111,28 @@ export default function BusinessCard() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-8 flex flex-col items-center space-y-6">
+      <div className="mt-8 flex justify-between flex-col items-center space-y-6">
         <MagicButton
           title={"View My Resume"}
           icon={<FaFileAlt />}
-          position="left"
+          position="center"
           handleClick={handleResume}
           otherClasses="!bg-[#161A31]"
         />
+        <a
+          href="https://instagram.com/YOUR_HANDLE_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="flex items-center justify-center w-11 h-11 rounded-full  hover:border-white/40 hover:scale-105 transition-all duration-200"
+        >
+          <Image
+            src="/images/instagram.png"
+            alt="Instagram"
+            width={24}
+            height={24}
+          />
+        </a>
       </div>
     </div>
   );
