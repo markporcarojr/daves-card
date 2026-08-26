@@ -120,7 +120,7 @@ export default function BusinessCard() {
           otherClasses="!bg-[#161A31]"
         />
         <a
-          href="https://instagram.com/YOUR_HANDLE_HERE"
+          href="https://www.instagram.com/studious.alchemist"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
